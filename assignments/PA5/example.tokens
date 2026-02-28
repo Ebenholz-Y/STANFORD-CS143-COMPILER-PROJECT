@@ -1,0 +1,189 @@
+#name "example.cl"
+#6 CLASS
+#6 TYPEID A
+#6 '{'
+#8 OBJECTID add
+#8 '('
+#8 OBJECTID p
+#8 ':'
+#8 TYPEID Int
+#8 ')'
+#8 ':'
+#8 TYPEID Int
+#8 '{'
+#9 INT_CONST 1
+#10 '}'
+#10 ';'
+#12 OBJECTID sub
+#12 '('
+#12 OBJECTID p
+#12 ':'
+#12 TYPEID Int
+#12 ')'
+#12 ':'
+#12 TYPEID Int
+#12 '{'
+#13 INT_CONST 3
+#14 '}'
+#14 ';'
+#15 '}'
+#15 ';'
+#18 CLASS
+#18 TYPEID B
+#18 INHERITS
+#18 TYPEID A
+#18 '{'
+#19 OBJECTID add
+#19 '('
+#19 OBJECTID p
+#19 ':'
+#19 TYPEID Int
+#19 ')'
+#19 ':'
+#19 TYPEID Int
+#19 '{'
+#20 INT_CONST 2
+#21 '}'
+#21 ';'
+#22 '}'
+#22 ';'
+#24 CLASS
+#24 TYPEID C
+#24 '{'
+#25 OBJECTID p
+#25 ':'
+#25 TYPEID A
+#25 ASSIGN
+#25 NEW
+#25 TYPEID B
+#25 ';'
+#27 OBJECTID func
+#27 '('
+#27 ')'
+#27 ':'
+#27 TYPEID Object
+#27 '{'
+#28 OBJECTID p
+#28 '.'
+#28 OBJECTID add
+#28 '('
+#28 INT_CONST 1
+#28 ')'
+#29 '}'
+#29 ';'
+#30 '}'
+#30 ';'
+#32 CLASS
+#32 TYPEID D
+#32 '{'
+#33 OBJECTID p
+#33 ':'
+#33 TYPEID C
+#33 ';'
+#34 '}'
+#34 ';'
+#36 CLASS
+#36 TYPEID Main
+#36 '{'
+#37 OBJECTID a
+#37 ':'
+#37 TYPEID Int
+#37 ASSIGN
+#37 INT_CONST 1
+#37 ';'
+#38 OBJECTID b
+#38 ':'
+#38 TYPEID Int
+#38 ASSIGN
+#38 INT_CONST 2
+#38 ';'
+#39 OBJECTID c
+#39 ':'
+#39 TYPEID Int
+#39 ASSIGN
+#39 OBJECTID a
+#39 '+'
+#39 OBJECTID b
+#39 ';'
+#41 OBJECTID add
+#41 '('
+#41 OBJECTID p1
+#41 ':'
+#41 TYPEID Int
+#41 ','
+#41 OBJECTID p2
+#41 ':'
+#41 TYPEID Int
+#41 ','
+#41 OBJECTID p3
+#41 ':'
+#41 TYPEID Int
+#41 ')'
+#41 ':'
+#41 TYPEID Int
+#41 '{'
+#42 OBJECTID a
+#42 '+'
+#42 OBJECTID p1
+#42 '+'
+#42 OBJECTID p2
+#42 '+'
+#42 OBJECTID p3
+#43 '}'
+#43 ';'
+#45 OBJECTID test
+#45 '('
+#45 OBJECTID p
+#45 ':'
+#45 TYPEID Int
+#45 ')'
+#45 ':'
+#45 TYPEID Int
+#45 '{'
+#46 IF
+#46 OBJECTID p
+#46 '<'
+#46 INT_CONST 1
+#46 THEN
+#47 OBJECTID p
+#48 ELSE
+#49 INT_CONST 1
+#50 FI
+#51 '}'
+#51 ';'
+#54 OBJECTID test3
+#54 '('
+#54 OBJECTID p1
+#54 ':'
+#54 TYPEID Int
+#54 ','
+#54 OBJECTID p2
+#54 ':'
+#54 TYPEID Int
+#54 ')'
+#54 ':'
+#54 TYPEID Int
+#54 '{'
+#55 OBJECTID p1
+#55 '+'
+#55 OBJECTID p2
+#56 '}'
+#56 ';'
+#58 OBJECTID test4
+#58 '('
+#58 OBJECTID p1
+#58 ':'
+#58 TYPEID Int
+#58 ','
+#58 OBJECTID p2
+#58 ':'
+#58 TYPEID Int
+#58 ')'
+#58 ':'
+#58 TYPEID Bool
+#58 '{'
+#59 OBJECTID p1
+#59 '<'
+#59 OBJECTID p2
+#60 '}'
+#60 ';'

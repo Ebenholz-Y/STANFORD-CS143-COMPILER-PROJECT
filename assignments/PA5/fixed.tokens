@@ -1,0 +1,189 @@
+6 CLASS
+6 ID A
+6 '{'
+8 ID add
+8 '('
+8 ID p
+8 ':'
+8 ID Int
+8 ')'
+8 ':'
+8 ID Int
+8 '{'
+9 INT_CONST 1
+10 '}'
+10 ';'
+12 ID sub
+12 '('
+12 ID p
+12 ':'
+12 ID Int
+12 ')'
+12 ':'
+12 ID Int
+12 '{'
+13 INT_CONST 3
+14 '}'
+14 ';'
+15 '}'
+15 ';'
+18 CLASS
+18 ID B
+18 INHERITS
+18 ID A
+18 '{'
+19 ID add
+19 '('
+19 ID p
+19 ':'
+19 ID Int
+19 ')'
+19 ':'
+19 ID Int
+19 '{'
+20 INT_CONST 2
+21 '}'
+21 ';'
+22 '}'
+22 ';'
+24 CLASS
+24 ID C
+24 '{'
+25 ID p
+25 ':'
+25 ID A
+25 ASSIGN
+25 NEW
+25 ID B
+25 ';'
+27 ID func
+27 '('
+27 ')'
+27 ':'
+27 ID Object
+27 '{'
+28 ID p
+28 '.'
+28 ID add
+28 '('
+28 INT_CONST 1
+28 ')'
+29 '}'
+29 ';'
+30 '}'
+30 ';'
+32 CLASS
+32 ID D
+32 '{'
+33 ID p
+33 ':'
+33 ID C
+33 ';'
+34 '}'
+34 ';'
+36 CLASS
+36 ID Main
+36 '{'
+37 ID a
+37 ':'
+37 ID Int
+37 ASSIGN
+37 INT_CONST 1
+37 ';'
+38 ID b
+38 ':'
+38 ID Int
+38 ASSIGN
+38 INT_CONST 2
+38 ';'
+39 ID c
+39 ':'
+39 ID Int
+39 ASSIGN
+39 ID a
+39 '+'
+39 ID b
+39 ';'
+41 ID add
+41 '('
+41 ID p1
+41 ':'
+41 ID Int
+41 ','
+41 ID p2
+41 ':'
+41 ID Int
+41 ','
+41 ID p3
+41 ':'
+41 ID Int
+41 ')'
+41 ':'
+41 ID Int
+41 '{'
+42 ID a
+42 '+'
+42 ID p1
+42 '+'
+42 ID p2
+42 '+'
+42 ID p3
+43 '}'
+43 ';'
+45 ID test
+45 '('
+45 ID p
+45 ':'
+45 ID Int
+45 ')'
+45 ':'
+45 ID Int
+45 '{'
+46 IF
+46 ID p
+46 '<'
+46 INT_CONST 1
+46 THEN
+47 ID p
+48 ELSE
+49 INT_CONST 1
+50 FI
+51 '}'
+51 ';'
+54 ID test3
+54 '('
+54 ID p1
+54 ':'
+54 ID Int
+54 ','
+54 ID p2
+54 ':'
+54 ID Int
+54 ')'
+54 ':'
+54 ID Int
+54 '{'
+55 ID p1
+55 '+'
+55 ID p2
+56 '}'
+56 ';'
+58 ID test4
+58 '('
+58 ID p1
+58 ':'
+58 ID Int
+58 ','
+58 ID p2
+58 ':'
+58 ID Int
+58 ')'
+58 ':'
+58 ID Bool
+58 '{'
+59 ID p1
+59 '<'
+59 ID p2
+60 '}'
+60 ';'
+0 EOF

@@ -1,0 +1,828 @@
+#9
+_program
+  #9
+  _class
+    List
+    Object
+    "stack.cl"
+    (
+    #11
+    _attr
+      item
+      String
+      #0
+      _no_expr
+      : _no_type
+    #12
+    _attr
+      next
+      List
+      #0
+      _no_expr
+      : _no_type
+    #13
+    _method
+      init
+      #13
+      _formal
+        s
+        String
+      #13
+      _formal
+        n
+        List
+      List
+      #14
+      _block
+        #15
+        _assign
+          item
+          #15
+          _object
+            s
+          : _no_type
+        : _no_type
+        #16
+        _assign
+          next
+          #16
+          _object
+            n
+          : _no_type
+        : _no_type
+        #17
+        _object
+          self
+        : _no_type
+      : _no_type
+    #21
+    _method
+      next
+      List
+      #22
+      _object
+        next
+      : _no_type
+    #25
+    _method
+      item
+      String
+      #26
+      _object
+        item
+      : _no_type
+    )
+  #30
+  _class
+    Stack
+    Object
+    "stack.cl"
+    (
+    #31
+    _attr
+      top
+      List
+      #0
+      _no_expr
+      : _no_type
+    #33
+    _method
+      push
+      #33
+      _formal
+        s
+        String
+      Stack
+      #34
+      _block
+        #35
+        _assign
+          top
+          #35
+          _dispatch
+            #35
+            _new
+              List
+            : _no_type
+            init
+            (
+            #35
+            _object
+              s
+            : _no_type
+            #35
+            _object
+              top
+            : _no_type
+            )
+          : _no_type
+        : _no_type
+        #36
+        _object
+          self
+        : _no_type
+      : _no_type
+    #40
+    _method
+      pop
+      Stack
+      #42
+      _let
+        nil
+        List
+        #0
+        _no_expr
+        : _no_type
+        #44
+        _cond
+          #44
+          _isvoid
+            #44
+            _object
+              top
+            : _no_type
+          : _no_type
+          #45
+          _object
+            self
+          : _no_type
+          #47
+          _block
+            #48
+            _assign
+              top
+              #48
+              _dispatch
+                #48
+                _object
+                  top
+                : _no_type
+                next
+                (
+                )
+              : _no_type
+            : _no_type
+            #49
+            _object
+              self
+            : _no_type
+          : _no_type
+        : _no_type
+      : _no_type
+    #54
+    _method
+      top
+      List
+      #55
+      _object
+        top
+      : _no_type
+    )
+  #59
+  _class
+    DCommand
+    Object
+    "stack.cl"
+    (
+    #61
+    _attr
+      io
+      IO
+      #61
+      _new
+        IO
+      : _no_type
+    #62
+    _method
+      eval
+      #62
+      _formal
+        s
+        Stack
+      Object
+      #64
+      _let
+        cur
+        List
+        #64
+        _dispatch
+          #64
+          _object
+            s
+          : _no_type
+          top
+          (
+          )
+        : _no_type
+        #66
+        _block
+          #67
+          _loop
+            #67
+            _comp
+              #67
+              _isvoid
+                #67
+                _object
+                  cur
+                : _no_type
+              : _no_type
+            : _no_type
+            #67
+            _block
+              #68
+              _dispatch
+                #68
+                _object
+                  io
+                : _no_type
+                out_string
+                (
+                #68
+                _dispatch
+                  #68
+                  _dispatch
+                    #68
+                    _object
+                      cur
+                    : _no_type
+                    item
+                    (
+                    )
+                  : _no_type
+                  concat
+                  (
+                  #68
+                  _string
+                    "\n"
+                  : _no_type
+                  )
+                : _no_type
+                )
+              : _no_type
+              #69
+              _assign
+                cur
+                #69
+                _dispatch
+                  #69
+                  _object
+                    cur
+                  : _no_type
+                  next
+                  (
+                  )
+                : _no_type
+              : _no_type
+            : _no_type
+          : _no_type
+          #72
+          _object
+            self
+          : _no_type
+        : _no_type
+      : _no_type
+    )
+  #77
+  _class
+    ECommand
+    Object
+    "stack.cl"
+    (
+    #78
+    _attr
+      item1
+      String
+      #0
+      _no_expr
+      : _no_type
+    #79
+    _attr
+      item2
+      String
+      #0
+      _no_expr
+      : _no_type
+    #80
+    _attr
+      item3
+      String
+      #0
+      _no_expr
+      : _no_type
+    #81
+    _attr
+      list
+      List
+      #0
+      _no_expr
+      : _no_type
+    #82
+    _attr
+      cvt
+      A2I
+      #82
+      _new
+        A2I
+      : _no_type
+    #84
+    _method
+      eval
+      #84
+      _formal
+        s
+        Stack
+      Object
+      #85
+      _block
+        #86
+        _assign
+          list
+          #86
+          _dispatch
+            #86
+            _object
+              s
+            : _no_type
+            top
+            (
+            )
+          : _no_type
+        : _no_type
+        #87
+        _cond
+          #87
+          _isvoid
+            #87
+            _object
+              list
+            : _no_type
+          : _no_type
+          #88
+          _object
+            self
+          : _no_type
+          #90
+          _block
+            #91
+            _assign
+              item1
+              #91
+              _dispatch
+                #91
+                _dispatch
+                  #91
+                  _object
+                    s
+                  : _no_type
+                  top
+                  (
+                  )
+                : _no_type
+                item
+                (
+                )
+              : _no_type
+            : _no_type
+            #92
+            _cond
+              #92
+              _eq
+                #92
+                _object
+                  item1
+                : _no_type
+                #92
+                _string
+                  "+"
+                : _no_type
+              : _no_type
+              #93
+              _block
+                #94
+                _dispatch
+                  #94
+                  _object
+                    s
+                  : _no_type
+                  pop
+                  (
+                  )
+                : _no_type
+                #95
+                _assign
+                  item2
+                  #95
+                  _dispatch
+                    #95
+                    _dispatch
+                      #95
+                      _object
+                        s
+                      : _no_type
+                      top
+                      (
+                      )
+                    : _no_type
+                    item
+                    (
+                    )
+                  : _no_type
+                : _no_type
+                #96
+                _dispatch
+                  #96
+                  _object
+                    s
+                  : _no_type
+                  pop
+                  (
+                  )
+                : _no_type
+                #97
+                _assign
+                  item3
+                  #97
+                  _dispatch
+                    #97
+                    _dispatch
+                      #97
+                      _object
+                        s
+                      : _no_type
+                      top
+                      (
+                      )
+                    : _no_type
+                    item
+                    (
+                    )
+                  : _no_type
+                : _no_type
+                #98
+                _dispatch
+                  #98
+                  _object
+                    s
+                  : _no_type
+                  pop
+                  (
+                  )
+                : _no_type
+                #99
+                _dispatch
+                  #99
+                  _object
+                    s
+                  : _no_type
+                  push
+                  (
+                  #99
+                  _dispatch
+                    #99
+                    _object
+                      cvt
+                    : _no_type
+                    i2a
+                    (
+                    #99
+                    _plus
+                      #99
+                      _dispatch
+                        #99
+                        _object
+                          cvt
+                        : _no_type
+                        a2i
+                        (
+                        #99
+                        _object
+                          item2
+                        : _no_type
+                        )
+                      : _no_type
+                      #99
+                      _dispatch
+                        #99
+                        _object
+                          cvt
+                        : _no_type
+                        a2i
+                        (
+                        #99
+                        _object
+                          item3
+                        : _no_type
+                        )
+                      : _no_type
+                    : _no_type
+                    )
+                  : _no_type
+                  )
+                : _no_type
+              : _no_type
+              #102
+              _cond
+                #102
+                _eq
+                  #102
+                  _object
+                    item1
+                  : _no_type
+                  #102
+                  _string
+                    "s"
+                  : _no_type
+                : _no_type
+                #103
+                _block
+                  #104
+                  _dispatch
+                    #104
+                    _object
+                      s
+                    : _no_type
+                    pop
+                    (
+                    )
+                  : _no_type
+                  #105
+                  _assign
+                    item2
+                    #105
+                    _dispatch
+                      #105
+                      _dispatch
+                        #105
+                        _object
+                          s
+                        : _no_type
+                        top
+                        (
+                        )
+                      : _no_type
+                      item
+                      (
+                      )
+                    : _no_type
+                  : _no_type
+                  #106
+                  _dispatch
+                    #106
+                    _object
+                      s
+                    : _no_type
+                    pop
+                    (
+                    )
+                  : _no_type
+                  #107
+                  _assign
+                    item3
+                    #107
+                    _dispatch
+                      #107
+                      _dispatch
+                        #107
+                        _object
+                          s
+                        : _no_type
+                        top
+                        (
+                        )
+                      : _no_type
+                      item
+                      (
+                      )
+                    : _no_type
+                  : _no_type
+                  #108
+                  _dispatch
+                    #108
+                    _object
+                      s
+                    : _no_type
+                    pop
+                    (
+                    )
+                  : _no_type
+                  #109
+                  _dispatch
+                    #109
+                    _object
+                      s
+                    : _no_type
+                    push
+                    (
+                    #109
+                    _object
+                      item2
+                    : _no_type
+                    )
+                  : _no_type
+                  #110
+                  _dispatch
+                    #110
+                    _object
+                      s
+                    : _no_type
+                    push
+                    (
+                    #110
+                    _object
+                      item3
+                    : _no_type
+                    )
+                  : _no_type
+                : _no_type
+                #113
+                _object
+                  self
+                : _no_type
+              : _no_type
+            : _no_type
+          : _no_type
+        : _no_type
+      : _no_type
+    )
+  #122
+  _class
+    Main
+    IO
+    "stack.cl"
+    (
+    #124
+    _attr
+      cvr
+      A2I
+      #0
+      _no_expr
+      : _no_type
+    #125
+    _attr
+      stk
+      Stack
+      #125
+      _new
+        Stack
+      : _no_type
+    #126
+    _attr
+      flag
+      Bool
+      #0
+      _no_expr
+      : _no_type
+    #127
+    _attr
+      cmd
+      String
+      #0
+      _no_expr
+      : _no_type
+    #129
+    _method
+      main
+      Object
+      #130
+      _block
+        #131
+        _assign
+          flag
+          #131
+          _bool
+            1
+          : _no_type
+        : _no_type
+        #132
+        _loop
+          #132
+          _object
+            flag
+          : _no_type
+          #132
+          _block
+            #133
+            _dispatch
+              #133
+              _object
+                self
+              : _no_type
+              out_string
+              (
+              #133
+              _string
+                ">"
+              : _no_type
+              )
+            : _no_type
+            #134
+            _assign
+              cmd
+              #134
+              _dispatch
+                #134
+                _object
+                  self
+                : _no_type
+                in_string
+                (
+                )
+              : _no_type
+            : _no_type
+            #135
+            _cond
+              #135
+              _eq
+                #135
+                _object
+                  cmd
+                : _no_type
+                #135
+                _string
+                  "x"
+                : _no_type
+              : _no_type
+              #136
+              _assign
+                flag
+                #136
+                _bool
+                  0
+                : _no_type
+              : _no_type
+              #138
+              _cond
+                #138
+                _eq
+                  #138
+                  _object
+                    cmd
+                  : _no_type
+                  #138
+                  _string
+                    "d"
+                  : _no_type
+                : _no_type
+                #139
+                _dispatch
+                  #139
+                  _new
+                    DCommand
+                  : _no_type
+                  eval
+                  (
+                  #139
+                  _object
+                    stk
+                  : _no_type
+                  )
+                : _no_type
+                #141
+                _cond
+                  #141
+                  _eq
+                    #141
+                    _object
+                      cmd
+                    : _no_type
+                    #141
+                    _string
+                      "e"
+                    : _no_type
+                  : _no_type
+                  #142
+                  _dispatch
+                    #142
+                    _new
+                      ECommand
+                    : _no_type
+                    eval
+                    (
+                    #142
+                    _object
+                      stk
+                    : _no_type
+                    )
+                  : _no_type
+                  #144
+                  _dispatch
+                    #144
+                    _object
+                      stk
+                    : _no_type
+                    push
+                    (
+                    #144
+                    _object
+                      cmd
+                    : _no_type
+                    )
+                  : _no_type
+                : _no_type
+              : _no_type
+            : _no_type
+          : _no_type
+        : _no_type
+      : _no_type
+    )

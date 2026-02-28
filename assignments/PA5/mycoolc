@@ -1,0 +1,12 @@
+#!/bin/csh -f
+if ($#argv == 0) then
+    echo "Usage: mycoolc <file.cl>"
+    exit 1
+endif
+
+set base = `basename $1 .cl`
+
+./lexer $1 > $base.tokens
+./parser < $base.tokens > $base.ast
+./semant < $base.ast > $base.checked
+./cgen < $base.checked > $base.s   # ←←← 必须有 "> $base.s"
